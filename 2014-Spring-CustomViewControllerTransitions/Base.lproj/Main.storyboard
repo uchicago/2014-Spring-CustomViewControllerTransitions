@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CcD-YX-UTD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -17,9 +17,107 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MC2-8j-S8K">
+                        <barButtonItem key="leftBarButtonItem" title="Push" id="Zp2-xz-DYo">
+                            <connections>
+                                <segue destination="TVI-TM-f9p" kind="push" id="mio-fh-e5x"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Modal" id="tiO-rD-wiK">
+                            <connections>
+                                <segue destination="ZtL-uM-yR2" kind="modal" identifier="SegueModal" id="YWk-CU-j9B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <customObject id="l9Y-pw-Uew" customClass="NavigationControllerDelegate"/>
             </objects>
+            <point key="canvasLocation" x="460" y="5"/>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="YzL-s7-apD">
+            <objects>
+                <viewController id="ZtL-uM-yR2" customClass="ModalViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="krm-eP-udw"/>
+                        <viewControllerLayoutGuide type="bottom" id="fDc-Tk-4bf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tnM-xC-9df">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iP-aA-mhD">
+                                <rect key="frame" x="53" y="35" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapDismiss:" destination="ZtL-uM-yR2" eventType="touchUpInside" id="TxT-W9-rGS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="160" height="100"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zx8-4w-a7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1248" y="425"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SoJ-3b-Pup">
+            <objects>
+                <viewController id="TVI-TM-f9p" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w4F-Dt-amo"/>
+                        <viewControllerLayoutGuide type="bottom" id="jsR-IG-Lws"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W5U-p4-sHV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXH-iF-p4H">
+                                <rect key="frame" x="152" y="273" width="17" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6xf-Vz-BCB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xud-WZ-xqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="-588"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pSt-ge-1pY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CcD-YX-UTD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AD5-c1-ibK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <outlet property="delegate" destination="eYw-XH-YxY" id="Crc-0s-LcW"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="hiF-dH-2ub"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hR7-K9-Bch" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="eYw-XH-YxY" userLabel="Navigation Controller Delegate" customClass="NavigationControllerDelegate">
+                    <connections>
+                        <outlet property="navigationController" destination="CcD-YX-UTD" id="n38-Vx-FIB"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-74" y="20"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

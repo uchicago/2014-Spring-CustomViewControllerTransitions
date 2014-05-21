@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ModalViewController.h
 //  2014-Spring-CustomViewControllerTransitions
 //
 //  Created by T. Andrew Binkowski on 5/19/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UIViewControllerTransitioningDelegate>
-//- (IBAction)tapModal:(UIBarButtonItem *)sender;
+@interface ModalViewController : UIViewController
+- (IBAction)tapDismiss:(UIButton *)sender;
 
 @end

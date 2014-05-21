@@ -21,6 +21,10 @@
 		3723D896192A77BE00D64878 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3723D878192A77BE00D64878 /* UIKit.framework */; };
 		3723D89E192A77BE00D64878 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3723D89C192A77BE00D64878 /* InfoPlist.strings */; };
 		3723D8A0192A77BE00D64878 /* _014_Spring_CustomViewControllerTransitionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723D89F192A77BE00D64878 /* _014_Spring_CustomViewControllerTransitionsTests.m */; };
+		3723D8AE192A7DD700D64878 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723D8AD192A7DD700D64878 /* TransitionAnimator.m */; };
+		3723D8B1192A7E5F00D64878 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723D8B0192A7E5F00D64878 /* ModalViewController.m */; };
+		3723D8B4192A8E7700D64878 /* NavigationTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723D8B3192A8E7700D64878 /* NavigationTransitionAnimator.m */; };
+		3723D8B7192A926500D64878 /* NavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723D8B6192A926500D64878 /* NavigationControllerDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		3723D89B192A77BE00D64878 /* 2014-Spring-CustomViewControllerTransitionsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "2014-Spring-CustomViewControllerTransitionsTests-Info.plist"; sourceTree = "<group>"; };
 		3723D89D192A77BE00D64878 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3723D89F192A77BE00D64878 /* _014_Spring_CustomViewControllerTransitionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _014_Spring_CustomViewControllerTransitionsTests.m; sourceTree = "<group>"; };
+		3723D8AC192A7DD700D64878 /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
+		3723D8AD192A7DD700D64878 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
+		3723D8AF192A7E5F00D64878 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		3723D8B0192A7E5F00D64878 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
+		3723D8B2192A8E7700D64878 /* NavigationTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTransitionAnimator.h; sourceTree = "<group>"; };
+		3723D8B3192A8E7700D64878 /* NavigationTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationTransitionAnimator.m; sourceTree = "<group>"; };
+		3723D8B5192A926500D64878 /* NavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerDelegate.h; sourceTree = "<group>"; };
+		3723D8B6192A926500D64878 /* NavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +124,12 @@
 		3723D87A192A77BE00D64878 /* 2014-Spring-CustomViewControllerTransitions */ = {
 			isa = PBXGroup;
 			children = (
+				3723D8B8192A98F700D64878 /* Animators */,
 				3723D883192A77BE00D64878 /* AppDelegate.h */,
 				3723D884192A77BE00D64878 /* AppDelegate.m */,
-				3723D886192A77BE00D64878 /* Main.storyboard */,
-				3723D889192A77BE00D64878 /* ViewController.h */,
-				3723D88A192A77BE00D64878 /* ViewController.m */,
+				3723D8B9192A990300D64878 /* View Controllers */,
+				3723D8B5192A926500D64878 /* NavigationControllerDelegate.h */,
+				3723D8B6192A926500D64878 /* NavigationControllerDelegate.m */,
 				3723D88C192A77BE00D64878 /* Images.xcassets */,
 				3723D87B192A77BE00D64878 /* Supporting Files */,
 			);
@@ -126,6 +139,7 @@
 		3723D87B192A77BE00D64878 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3723D886192A77BE00D64878 /* Main.storyboard */,
 				3723D87C192A77BE00D64878 /* 2014-Spring-CustomViewControllerTransitions-Info.plist */,
 				3723D87D192A77BE00D64878 /* InfoPlist.strings */,
 				3723D880192A77BE00D64878 /* main.m */,
@@ -150,6 +164,28 @@
 				3723D89C192A77BE00D64878 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3723D8B8192A98F700D64878 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				3723D8AC192A7DD700D64878 /* TransitionAnimator.h */,
+				3723D8AD192A7DD700D64878 /* TransitionAnimator.m */,
+				3723D8B2192A8E7700D64878 /* NavigationTransitionAnimator.h */,
+				3723D8B3192A8E7700D64878 /* NavigationTransitionAnimator.m */,
+			);
+			name = Animators;
+			sourceTree = "<group>";
+		};
+		3723D8B9192A990300D64878 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3723D889192A77BE00D64878 /* ViewController.h */,
+				3723D88A192A77BE00D64878 /* ViewController.m */,
+				3723D8AF192A7E5F00D64878 /* ModalViewController.h */,
+				3723D8B0192A7E5F00D64878 /* ModalViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3723D88B192A77BE00D64878 /* ViewController.m in Sources */,
+				3723D8AE192A7DD700D64878 /* TransitionAnimator.m in Sources */,
+				3723D8B1192A7E5F00D64878 /* ModalViewController.m in Sources */,
+				3723D8B4192A8E7700D64878 /* NavigationTransitionAnimator.m in Sources */,
 				3723D885192A77BE00D64878 /* AppDelegate.m in Sources */,
 				3723D881192A77BE00D64878 /* main.m in Sources */,
+				3723D8B7192A926500D64878 /* NavigationControllerDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +496,7 @@
 				3723D8A5192A77BE00D64878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3723D8A6192A77BE00D64878 /* Build configuration list for PBXNativeTarget "2014-Spring-CustomViewControllerTransitionsTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +505,7 @@
 				3723D8A8192A77BE00D64878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
